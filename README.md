@@ -1,38 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Installation
 
-## Getting Started
+Pour commencer à utiliser cette application, commencer par installer les dépendances du projet en lançant la commande suivante : 
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Il faut ensuite créer un projet [Upstash](https://upstash.com/) puis renseigner les informations de la base de données Redis dans le fichier `.env.local` comme indiqué dans `.env.example`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+De même, il faudra créer un projet [Firebase](https://firebase.google.com/) puis renseigner les clés du projet dans le fichier d'environnement.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Finalement, générez une clé API temporaire sur le site officiel [Riot Developper](https://developer.riotgames.com/) et la renseigner dans les variables d'environnement.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Sites utiles
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Ci-dessous les liens utiles pour les projets liés à League of Legends :
+- [communitydragon](https://raw.communitydragon.org/latest/) : derniers assets du jeu au format brut
+- Pour télécharger la dernière version des assets via le CDN, vous pouvez regarder la dernière version du jeu sur le [lien suivant](https://ddragon.leagueoflegends.com/api/versions.json) puis la remplacer dans le lien suivant https://ddragon.leagueoflegends.com/cdn/dragontail-[version].tgz
+- [Documentation non officielle](https://riot-api-libraries.readthedocs.io/en/latest/index.html)
+- Un historique de l'ancien Blog de Riot Developper est disponible à [l'adresse suivante](https://hextechdocs.dev/)
 
-## Learn More
+## Utilisation
 
-To learn more about Next.js, take a look at the following resources:
+Vous pouvez tester la libraire en lançant le serveur local via la commande :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Un premier point d'accès pour la librairie est disponible à l'adresse `localhost:3000/api/lol/{region}/{summonerName}`
